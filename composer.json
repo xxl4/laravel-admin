@@ -1,14 +1,14 @@
 {
-    "name": "encore/laravel-admin",
+    "name": "nicelizhi/laravel-admin",
     "description": "laravel admin",
     "type": "library",
     "keywords": ["laravel", "admin", "grid", "form"],
-    "homepage": "https://github.com/z-song/laravel-admin",
+    "homepage": "https://github.com/nicelizhi/laravel-admin",
     "license": "MIT",
     "authors": [
         {
-            "name": "zsong",
-            "email": "zosong@126.com"
+            "name": "nicelizhi",
+            "email": "nicelizhi@gmail.com"
         }
     ],
     "require": {
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Admin\\": "src/"
+            "Nicelizhi\\Admin\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -51,10 +51,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Admin\\AdminServiceProvider"
+                "Nicelizhi\\Admin\\AdminServiceProvider"
             ],
             "aliases": {
-                "Admin": "Encore\\Admin\\Facades\\Admin"
+                "Admin": "Nicelizhi\\Admin\\Facades\\Admin"
             }
         }
     }
