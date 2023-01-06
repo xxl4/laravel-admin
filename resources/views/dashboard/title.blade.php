@@ -29,7 +29,7 @@
     Laravel-admin
 </div>
 <div class="links">
-    <a href="https://github.com/z-song/laravel-admin" target="_blank">Github</a>
-    <a href="http://laravel-admin.org/docs"  target="_blank">Documentation</a>
-    <a href="http://laravel-admin.org/demo"  target="_blank">Demo</a>
+    <a href="https://github.com/nicelizhi/laravel-admin/" target="_blank">Github</a>
+    <a href="https://github.com/nicelizhi/laravel-admin/wiki"  target="_blank">Wike</a>
+    <a href="https://github.com/nicelizhi/laravel-admin/issues"  target="_blank">ISSUES</a>
 </div>
