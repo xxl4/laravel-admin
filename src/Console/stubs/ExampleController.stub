@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use Encore\Admin\Controllers\AdminController;
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use Encore\Admin\Show;
+use Nicelizhi\Admin\Controllers\AdminController;
+use Nicelizhi\Admin\Form;
+use Nicelizhi\Admin\Grid;
+use Nicelizhi\Admin\Show;
 
 class ExampleController extends AdminController
 {
