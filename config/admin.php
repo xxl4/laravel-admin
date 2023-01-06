@@ -322,6 +322,26 @@ return [
     */
     'show_environment' => true,
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Show header for page
+    |--------------------------------------------------------------------------
+    |
+    | Whether to display the environment at the header of each page
+    |   
+    */
+    'show_header' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Show menu for page
+    |--------------------------------------------------------------------------
+    |
+    | Whether to display the environment at the menu of each page
+    |   
+    */
+    'show_sidebar' => true,
     /*
     |--------------------------------------------------------------------------
     | Menu bind to permission

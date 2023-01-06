@@ -1,4 +1,5 @@
 <!-- Main Header -->
+@if(config('admin.show_header'))
 <header class="main-header">
 
     <!-- Logo -->
@@ -62,3 +63,4 @@
         </div>
     </nav>
 </header>
+@endif
