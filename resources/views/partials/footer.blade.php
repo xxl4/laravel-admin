@@ -14,5 +14,7 @@
 
     </div>
     <!-- Default to the left -->
-    <strong>Powered by <a href="https://github.com/z-song/laravel-admin" target="_blank">laravel-admin</a></strong>
+    @if(config('admin.show_version'))
+    <strong>Powered by <a href="https://github.com/nicelizhi/laravel-admin" target="_blank">laravel-admin</a></strong>
+    @endif
 </footer>
