@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Concerns;
+namespace Nicelizhi\Admin\Grid\Concerns;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 
 trait CanDoubleClick
 {

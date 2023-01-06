@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Grid\Concerns;
+namespace Nicelizhi\Admin\Grid\Concerns;
 
 use Closure;
-use Encore\Admin\Grid\Filter;
+use Nicelizhi\Admin\Grid\Filter;
 use Illuminate\Support\Collection;
 
 trait HasFilter
@@ -11,7 +11,7 @@ trait HasFilter
     /**
      * The grid Filter.
      *
-     * @var \Encore\Admin\Grid\Filter
+     * @var \Nicelizhi\Admin\Grid\Filter
      */
     protected $filter;
 

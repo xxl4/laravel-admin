@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Filter\Presenter;
+namespace Nicelizhi\Admin\Grid\Filter\Presenter;
 
-use Encore\Admin\Facades\Admin;
+use Nicelizhi\Admin\Facades\Admin;
 
 class Checkbox extends Radio
 {

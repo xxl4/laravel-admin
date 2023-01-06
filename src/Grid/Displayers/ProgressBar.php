@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Grid\Displayers;
+namespace Nicelizhi\Admin\Grid\Displayers;
 
 class ProgressBar extends AbstractDisplayer
 {

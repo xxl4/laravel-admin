@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace Nicelizhi\Admin\Form\Field;
 
 use Illuminate\Contracts\Support\Arrayable;
 

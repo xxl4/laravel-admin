@@ -1,13 +1,13 @@
 <?php
 
-namespace Encore\Admin\Grid\Tools;
+namespace Nicelizhi\Admin\Grid\Tools;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Form\Field;
-use Encore\Admin\Form\Field\MultipleSelect;
-use Encore\Admin\Form\Field\Select;
-use Encore\Admin\Form\Field\Text;
-use Encore\Admin\Grid;
+use Nicelizhi\Admin\Admin;
+use Nicelizhi\Admin\Form\Field;
+use Nicelizhi\Admin\Form\Field\MultipleSelect;
+use Nicelizhi\Admin\Form\Field\Select;
+use Nicelizhi\Admin\Form\Field\Text;
+use Nicelizhi\Admin\Grid;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Grid\Column;
+namespace Nicelizhi\Admin\Grid\Column;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Grid\Model;
+use Nicelizhi\Admin\Admin;
+use Nicelizhi\Admin\Grid\Model;
 
 class RangeFilter extends Filter
 {

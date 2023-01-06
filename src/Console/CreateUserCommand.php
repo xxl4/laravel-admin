@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Console;
+namespace Nicelizhi\Admin\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;

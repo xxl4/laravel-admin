@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Controllers;
+namespace Nicelizhi\Admin\Controllers;
 
 /**
  * Trait ModelForm.

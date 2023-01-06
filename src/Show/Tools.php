@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Show;
+namespace Nicelizhi\Admin\Show;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

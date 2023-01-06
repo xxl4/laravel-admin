@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace Nicelizhi\Admin\Form\Field;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 
 class CheckboxCard extends CheckboxButton
 {

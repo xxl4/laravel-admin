@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Console;
+namespace Nicelizhi\Admin\Console;
 
-use Encore\Admin\Auth\Database\Menu;
+use Nicelizhi\Admin\Auth\Database\Menu;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;

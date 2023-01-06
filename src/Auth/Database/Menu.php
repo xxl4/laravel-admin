@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Auth\Database;
+namespace Nicelizhi\Admin\Auth\Database;
 
-use Encore\Admin\Traits\DefaultDatetimeFormat;
-use Encore\Admin\Traits\ModelTree;
+use Nicelizhi\Admin\Traits\DefaultDatetimeFormat;
+use Nicelizhi\Admin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;

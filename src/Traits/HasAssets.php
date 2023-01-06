@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Traits;
+namespace Nicelizhi\Admin\Traits;
 
 trait HasAssets
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Controllers;
+namespace Nicelizhi\Admin\Controllers;
 
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use Encore\Admin\Show;
+use Nicelizhi\Admin\Form;
+use Nicelizhi\Admin\Grid;
+use Nicelizhi\Admin\Show;
 use Illuminate\Support\Str;
 
 class PermissionController extends AdminController

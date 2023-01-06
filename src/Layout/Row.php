@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Layout;
+namespace Nicelizhi\Admin\Layout;
 
 use Illuminate\Contracts\Support\Renderable;
 

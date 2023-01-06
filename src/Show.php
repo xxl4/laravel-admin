@@ -1,12 +1,12 @@
 <?php
 
-namespace Encore\Admin;
+namespace Nicelizhi\Admin;
 
-use Encore\Admin\Show\Divider;
-use Encore\Admin\Show\Field;
-use Encore\Admin\Show\Panel;
-use Encore\Admin\Show\Relation;
-use Encore\Admin\Traits\ShouldSnakeAttributes;
+use Nicelizhi\Admin\Show\Divider;
+use Nicelizhi\Admin\Show\Field;
+use Nicelizhi\Admin\Show\Panel;
+use Nicelizhi\Admin\Show\Relation;
+use Nicelizhi\Admin\Traits\ShouldSnakeAttributes;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

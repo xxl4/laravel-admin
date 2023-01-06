@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Grid;
+namespace Nicelizhi\Admin\Grid;
 
-use Encore\Admin\Grid;
-use Encore\Admin\Grid\Exporters\CsvExporter;
+use Nicelizhi\Admin\Grid;
+use Nicelizhi\Admin\Grid\Exporters\CsvExporter;
 
 class Exporter
 {

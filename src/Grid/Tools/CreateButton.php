@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Tools;
+namespace Nicelizhi\Admin\Grid\Tools;
 
-use Encore\Admin\Grid;
+use Nicelizhi\Admin\Grid;
 
 class CreateButton extends AbstractTool
 {

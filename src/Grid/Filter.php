@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Grid;
+namespace Nicelizhi\Admin\Grid;
 
-use Encore\Admin\Grid\Filter\AbstractFilter;
-use Encore\Admin\Grid\Filter\Layout\Layout;
-use Encore\Admin\Grid\Filter\Scope;
+use Nicelizhi\Admin\Grid\Filter\AbstractFilter;
+use Nicelizhi\Admin\Grid\Filter\Layout\Layout;
+use Nicelizhi\Admin\Grid\Filter\Scope;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

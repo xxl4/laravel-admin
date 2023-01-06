@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Displayers;
+namespace Nicelizhi\Admin\Grid\Displayers;
 
-use Encore\Admin\Facades\Admin;
+use Nicelizhi\Admin\Facades\Admin;
 
 /**
  * Class QRCode.

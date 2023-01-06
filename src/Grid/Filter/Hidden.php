@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\Grid\Filter;
+namespace Nicelizhi\Admin\Grid\Filter;
 
 class Hidden extends AbstractFilter
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Actions;
+namespace Nicelizhi\Admin\Actions;
 
-use Encore\Admin\Grid\Column;
+use Nicelizhi\Admin\Grid\Column;
 use Illuminate\Http\Request;
 
 abstract class RowAction extends GridAction

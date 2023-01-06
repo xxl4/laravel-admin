@@ -3,9 +3,9 @@
  * Copyright (c) 2019. Mallto.Co.Ltd.<mall-to.com> All rights reserved.
  */
 
-namespace Encore\Admin\Form\Layout;
+namespace Nicelizhi\Admin\Form\Layout;
 
-use Encore\Admin\Form;
+use Nicelizhi\Admin\Form;
 use Illuminate\Support\Collection;
 
 class Layout

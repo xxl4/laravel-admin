@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Form;
+namespace Nicelizhi\Admin\Form;
 
-use Encore\Admin\Form;
+use Nicelizhi\Admin\Form;
 use Illuminate\Support\Collection;
 
 class Tab

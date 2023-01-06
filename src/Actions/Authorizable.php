@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Actions;
+namespace Nicelizhi\Admin\Actions;
 
-use Encore\Admin\Facades\Admin;
+use Nicelizhi\Admin\Facades\Admin;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 

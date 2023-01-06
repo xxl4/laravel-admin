@@ -30,7 +30,7 @@
 
                         @foreach($form->fields() as $field)
 
-                            @if (is_a($field, \Encore\Admin\Form\Field\Hidden::class))
+                            @if (is_a($field, \Nicelizhi\Admin\Form\Field\Hidden::class))
                                 <?php $hidden .= $field->render(); ?>
                                 @continue
                             @endif

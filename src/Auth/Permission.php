@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Auth;
+namespace Nicelizhi\Admin\Auth;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Middleware\Pjax;
+use Nicelizhi\Admin\Facades\Admin;
+use Nicelizhi\Admin\Middleware\Pjax;
 
 class Permission
 {

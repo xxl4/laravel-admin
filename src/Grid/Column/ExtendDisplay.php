@@ -1,11 +1,11 @@
 <?php
 
-namespace Encore\Admin\Grid\Column;
+namespace Nicelizhi\Admin\Grid\Column;
 
 use Carbon\Carbon;
-use Encore\Admin\Grid\Column;
-use Encore\Admin\Grid\Displayers;
-use Encore\Admin\Grid\Model;
+use Nicelizhi\Admin\Grid\Column;
+use Nicelizhi\Admin\Grid\Displayers;
+use Nicelizhi\Admin\Grid\Model;
 use Illuminate\Support\Arr;
 
 /**

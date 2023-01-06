@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Actions\Interactor;
+namespace Nicelizhi\Admin\Actions\Interactor;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 
 class Dialog extends Interactor
 {

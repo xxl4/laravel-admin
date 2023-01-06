@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Controllers;
+namespace Nicelizhi\Admin\Controllers;
 
-use Encore\Admin\Auth\Database\OperationLog;
-use Encore\Admin\Grid;
+use Nicelizhi\Admin\Auth\Database\OperationLog;
+use Nicelizhi\Admin\Grid;
 use Illuminate\Support\Arr;
 
 class LogController extends AdminController

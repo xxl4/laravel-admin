@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Displayers;
+namespace Nicelizhi\Admin\Grid\Displayers;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 use Illuminate\Support\Arr;
 
 class SwitchGroup extends SwitchDisplay

@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Form\Field;
+namespace Nicelizhi\Admin\Form\Field;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Form\Field;
+use Nicelizhi\Admin\Admin;
+use Nicelizhi\Admin\Form\Field;
 
 class Textarea extends Field
 {

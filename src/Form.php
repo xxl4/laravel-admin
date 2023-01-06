@@ -1,18 +1,18 @@
 <?php
 
-namespace Encore\Admin;
+namespace Nicelizhi\Admin;
 
 use Closure;
-use Encore\Admin\Exception\Handler;
-use Encore\Admin\Form\Builder;
-use Encore\Admin\Form\Concerns\HandleCascadeFields;
-use Encore\Admin\Form\Concerns\HasFields;
-use Encore\Admin\Form\Concerns\HasHooks;
-use Encore\Admin\Form\Field;
-use Encore\Admin\Form\Layout\Layout;
-use Encore\Admin\Form\Row;
-use Encore\Admin\Form\Tab;
-use Encore\Admin\Traits\ShouldSnakeAttributes;
+use Nicelizhi\Admin\Exception\Handler;
+use Nicelizhi\Admin\Form\Builder;
+use Nicelizhi\Admin\Form\Concerns\HandleCascadeFields;
+use Nicelizhi\Admin\Form\Concerns\HasFields;
+use Nicelizhi\Admin\Form\Concerns\HasHooks;
+use Nicelizhi\Admin\Form\Field;
+use Nicelizhi\Admin\Form\Layout\Layout;
+use Nicelizhi\Admin\Form\Row;
+use Nicelizhi\Admin\Form\Tab;
+use Nicelizhi\Admin\Traits\ShouldSnakeAttributes;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -1421,7 +1421,7 @@ class Form implements Renderable
      *
      * @param Closure $callback
      *
-     * @return \Encore\Admin\Form\Footer
+     * @return \Nicelizhi\Admin\Form\Footer
      */
     public function footer(Closure $callback = null)
     {

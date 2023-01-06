@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Show;
+namespace Nicelizhi\Admin\Show;
 
-use Encore\Admin\Grid;
-use Encore\Admin\Show;
+use Nicelizhi\Admin\Grid;
+use Nicelizhi\Admin\Show;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

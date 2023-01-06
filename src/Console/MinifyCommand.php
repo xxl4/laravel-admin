@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\Console;
+namespace Nicelizhi\Admin\Console;
 
-use Encore\Admin\Admin;
-use Encore\Admin\Facades\Admin as AdminFacade;
+use Nicelizhi\Admin\Admin;
+use Nicelizhi\Admin\Facades\Admin as AdminFacade;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use MatthiasMullie\Minify;

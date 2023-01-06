@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Column;
+namespace Nicelizhi\Admin\Grid\Column;
 
-use Encore\Admin\Grid\Displayers;
+use Nicelizhi\Admin\Grid\Displayers;
 
 trait InlineEditing
 {

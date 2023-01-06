@@ -1,15 +1,15 @@
 <?php
 
-namespace Encore\Admin\Grid\Filter;
+namespace Nicelizhi\Admin\Grid\Filter;
 
-use Encore\Admin\Grid\Filter;
-use Encore\Admin\Grid\Filter\Presenter\Checkbox;
-use Encore\Admin\Grid\Filter\Presenter\DateTime;
-use Encore\Admin\Grid\Filter\Presenter\MultipleSelect;
-use Encore\Admin\Grid\Filter\Presenter\Presenter;
-use Encore\Admin\Grid\Filter\Presenter\Radio;
-use Encore\Admin\Grid\Filter\Presenter\Select;
-use Encore\Admin\Grid\Filter\Presenter\Text;
+use Nicelizhi\Admin\Grid\Filter;
+use Nicelizhi\Admin\Grid\Filter\Presenter\Checkbox;
+use Nicelizhi\Admin\Grid\Filter\Presenter\DateTime;
+use Nicelizhi\Admin\Grid\Filter\Presenter\MultipleSelect;
+use Nicelizhi\Admin\Grid\Filter\Presenter\Presenter;
+use Nicelizhi\Admin\Grid\Filter\Presenter\Radio;
+use Nicelizhi\Admin\Grid\Filter\Presenter\Select;
+use Nicelizhi\Admin\Grid\Filter\Presenter\Text;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

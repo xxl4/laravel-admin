@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Grid\Tools;
+namespace Nicelizhi\Admin\Grid\Tools;
 
-use Encore\Admin\Admin;
+use Nicelizhi\Admin\Admin;
 
 class FilterButton extends AbstractTool
 {

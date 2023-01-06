@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Actions\Interactor;
+namespace Nicelizhi\Admin\Actions\Interactor;
 
-use Encore\Admin\Actions\Action;
+use Nicelizhi\Admin\Actions\Action;
 
 abstract class Interactor
 {

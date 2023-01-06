@@ -1,10 +1,10 @@
 <?php
 
-namespace Encore\Admin\Traits;
+namespace Nicelizhi\Admin\Traits;
 
-use Encore\Admin\Form;
-use Encore\Admin\Grid;
-use Encore\Admin\Tree;
+use Nicelizhi\Admin\Form;
+use Nicelizhi\Admin\Grid;
+use Nicelizhi\Admin\Tree;
 
 /**
  * @deprecated

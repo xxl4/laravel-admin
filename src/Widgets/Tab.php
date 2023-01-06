@@ -1,8 +1,8 @@
 <?php
 
-namespace Encore\Admin\Widgets;
+namespace Nicelizhi\Admin\Widgets;
 
-use Encore\Admin\Facades\Admin;
+use Nicelizhi\Admin\Facades\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class Tab extends Widget implements Renderable
