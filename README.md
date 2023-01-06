@@ -15,13 +15,13 @@ Installation
 First, install laravel 5.5, and make sure that the database connection settings are correct.
 
 ```
-composer require encore/laravel-admin
+composer require nicelizhi/laravel-admin
 ```
 
 Then run these commands to publish assets and config：
 
 ```
-php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
+php artisan vendor:publish --provider="Nicelizhi\Admin\AdminServiceProvider"
 ```
 After run command you can find config file in `config/admin.php`, in this file you can change the install directory,db connection or table names.
 
