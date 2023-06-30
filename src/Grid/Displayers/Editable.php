@@ -201,7 +201,10 @@ STR;
 
         Admin::script("$('.$class').editable($options);");
 
-        $this->value = htmlentities($this->value ?? '');
+        // 针对与在 textare 显示的时候，可以使用substr 组件完成字符的截取与点开编辑后的查看处理
+        $this->original = $this->type === 'textarea' ? $this->getColumn()->getOriginal() : $this->value; 
+        $this->original = htmlentities($this->original ?? '');
+
 
         $attributes = [
             'href'       => '#',
@@ -209,7 +212,7 @@ STR;
             'data-type'  => $this->type,
             'data-pk'    => "{$this->getKey()}",
             'data-url'   => "{$this->getResource()}/{$this->getKey()}",
-            'data-value' => "{$this->value}",
+            'data-value' => "{$this->original}",
         ];
 
         if (!empty($this->attributes)) {
