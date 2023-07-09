@@ -37,6 +37,10 @@ just go to this path `<YOUR_PROJECT_PATH>\vendor\Nicelizhi\laravel-admin\src\Tra
 **bootstrap.min.css** change it to **bootstrap.rtl.min.css**    
 **AdminLTE.min.css** change it to **AdminLTE.rtl.min.css**  
 
+Bug Report
+------------
+[https://github.com/nicelizhi/laravel-admin/issues](https://github.com/nicelizhi/laravel-admin/issues)
+
 ## Extensions
 
 
