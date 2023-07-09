@@ -4,6 +4,8 @@ namespace Nicelizhi\Admin\Grid\Displayers;
 
 use Nicelizhi\Admin\Admin;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class Editable extends AbstractDisplayer
 {
@@ -94,6 +96,10 @@ class Editable extends AbstractDisplayer
         }
     }
 
+    public function select2($url) {
+        $this->addOptions(compact('url'));
+    }
+
     /**
      * Date type editable.
      */
@@ -177,6 +183,8 @@ class Editable extends AbstractDisplayer
     public function display()
     {
         $this->options['name'] = $column = $this->getName();
+        $this->options['mode'] = "inline";
+        //$this->options['onblur'] = "ignore";
 
         $class = 'grid-editable-'.str_replace(['.', '#', '[', ']'], '-', $column);
 
@@ -199,16 +207,94 @@ class Editable extends AbstractDisplayer
 }
 STR;
 
-        Admin::script("$('.$class').editable($options);");
+
+        if($this->type=="select2") {      
+            $html = "var select_url='".$this->options['url']."';";
+            Admin::script($html);
+            $options = json_encode($this->options);
+
+            $options = substr($options, 0, -1).<<<'STR'
+            ,
+            "tpl": '<select></select>',
+            "autotext": "always",
+            "id": function (item) {
+                return item.text;
+            },
+            "display": function(value, sourceData) {
+                console.log(value);
+                console.log(sourceData);
+                /*
+                var html = [],
+                    checked = $.fn.editableutils.itemsByValue(value, sourceData, 'id');
+                    console.log(checked)
+                    checked = value;
+                if(checked.length) {
+                    $.each(checked, function(i, v) { html.push($.fn.editableutils.escape(v.text)); });
+                    $(this).html(html.join(', '));
+                } else {
+                    $(this).empty(); 
+                }*/
+                $(this).html(value);
+             },
+            "select2": {
+                "placeholder": 'Select',
+                //"dropdownParent": '.editable-inline',
+                //"dropdownParent": '.popover:last',
+                "width": '15em',
+                "dropdownAutoWidth": true,
+                "ajax": {
+                    "url": select_url,
+                    "dataType": "json",
+                    "processResults": function (data) {
+                        console.log(data)
+                        return {
+                            "results": data
+                        };
+                    },
+                },
+            },
+            "formatResult": function (item) {
+                console.log("formatResult")
+                console.log(item);
+                return item.text;
+            },
+            "formatSelection": function (item) {
+                console.log("formatSelection")
+                console.log(item);
+                return item.text;
+            },
+            "initSelection": function (element, callback) {
+                console.log("init")
+                console.log(element);
+                return $.get('/getById', { query: element.val() }, function (data) {
+                    callback(data);
+                });
+            }
+            }
+        STR;
+            Admin::script("$('.$class').editable($options);");
+        }else{
+            Admin::script("$('.$class').editable($options).on('shown', function(ev, editable) {
+                setTimeout(function() {
+                    editable.input.\$input.select();
+                },0);
+            });");
+        }
+        
+        //$add_js = "$('.column-".$column."').find('input').select();";
+        //Admin::script($add_js);
 
         // 针对与在 textare 显示的时候，可以使用substr 组件完成字符的截取与点开编辑后的查看处理
         $this->original = $this->type === 'textarea' ? $this->getColumn()->getOriginal() : $this->value; 
+        //$this->original = $this->type === 'text' ? "" : $this->original;
         $this->original = htmlentities($this->original ?? '');
+        
 
 
         $attributes = [
             'href'       => '#',
             'class'      => "$class",
+            'id'         => "{$column}_{$this->getKey()}",
             'data-type'  => $this->type,
             'data-pk'    => "{$this->getKey()}",
             'data-url'   => "{$this->getResource()}/{$this->getKey()}",
