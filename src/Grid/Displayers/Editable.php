@@ -223,23 +223,10 @@ STR;
             "display": function(value, sourceData) {
                 console.log(value);
                 console.log(sourceData);
-                /*
-                var html = [],
-                    checked = $.fn.editableutils.itemsByValue(value, sourceData, 'id');
-                    console.log(checked)
-                    checked = value;
-                if(checked.length) {
-                    $.each(checked, function(i, v) { html.push($.fn.editableutils.escape(v.text)); });
-                    $(this).html(html.join(', '));
-                } else {
-                    $(this).empty(); 
-                }*/
                 $(this).html(value);
              },
             "select2": {
                 "placeholder": 'Select',
-                //"dropdownParent": '.editable-inline',
-                //"dropdownParent": '.popover:last',
                 "width": '15em',
                 "dropdownAutoWidth": true,
                 "ajax": {
