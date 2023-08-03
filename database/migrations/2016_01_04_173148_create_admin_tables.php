@@ -97,6 +97,35 @@ class CreateAdminTables extends Migration
             $table->index('user_id');
             $table->timestamps();
         });
+
+        // emp table
+        Schema::create(config('admin.database.emp_table'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('parent_id')->default(0);
+            $table->integer('order')->default(0);
+            $table->string('title', 50);
+            $table->string('full_name', 100);
+            $table->string('view_code', 50);
+            $table->string('area_code', 50)->nullable();
+            $table->string('remarks', 200)->nullable();
+            $table->integer('status')->default(1);
+            $table->index('status');
+            $table->timestamps();
+        });
+        // emp user table
+        Schema::create(config('admin.database.emp_users_table'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->string('epm_name',20);
+            $table->string('epm_name_en',20)->nullable();
+            $table->string('office_code',20)->nullable();
+            $table->string('office_name',50)->nullable();
+            $table->string('compnay_code',20)->nullable();
+            $table->string('compnay_name',50)->nullable();
+            $table->integer("status", 1)->default(1);
+            $table->string("remarks", 100)->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -115,5 +144,7 @@ class CreateAdminTables extends Migration
         Schema::dropIfExists(config('admin.database.role_permissions_table'));
         Schema::dropIfExists(config('admin.database.role_menu_table'));
         Schema::dropIfExists(config('admin.database.operation_log_table'));
+        Schema::dropIfExists(config('admin.database.emp_table'));
+        Schema::dropIfExists(config('admin.database.emp_users_table'));
     }
 }
