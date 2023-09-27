@@ -125,14 +125,14 @@ class AdminTablesSeeder extends Seeder
                 'parent_id' => 2,
                 'order'     => 8,
                 'title'     => 'Emp',
-                'icon'      => 'fa-history',
+                'icon'      => 'fa-institution',
                 'uri'       => 'auth/emp',
             ],
             [
                 'parent_id' => 2,
                 'order'     => 9,
                 'title'     => 'Emp Users',
-                'icon'      => 'fa-history',
+                'icon'      => 'fa-users',
                 'uri'       => 'auth/emp-users',
             ],
         ]);

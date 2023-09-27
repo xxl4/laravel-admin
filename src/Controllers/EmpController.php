@@ -31,20 +31,16 @@ class EmpController extends Controller
 
                 $row->column(6, function (Column $column) {
                     $form = new \Nicelizhi\Admin\Widgets\Form();
-                    $form->action(admin_url('auth/menu'));
+                    $form->action(admin_url('auth/emp'));
 
                     $empModel = config('admin.database.emp_model');
-                    $permissionModel = config('admin.database.permissions_model');
-                    $roleModel = config('admin.database.roles_model');
-
                     $form->select('parent_id', trans('admin.parent_id'))->options($empModel::selectOptions());
                     $form->text('title', trans('admin.title'))->rules('required');
-                    $form->icon('icon', trans('admin.icon'))->default('fa-bars')->rules('required')->help($this->iconHelp());
-                    $form->text('uri', trans('admin.uri'));
-                    $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
-                    if ((new $empModel())->withPermission()) {
-                        $form->select('permission', trans('admin.permission'))->options($permissionModel::pluck('name', 'slug'));
-                    }
+                    $form->text('view_code', trans('admin.view_code'))->rules('required');
+                    $form->text('full_name', trans('admin.full_name'))->rules('required');
+
+                    $form->hidden('order')->default(1);
+                    
                     $form->hidden('_token')->default(csrf_token());
 
                     $column->append((new Box(trans('admin.new'), $form))->style('success'));
@@ -76,14 +72,16 @@ class EmpController extends Controller
         $tree->disableCreate();
 
         $tree->branch(function ($branch) {
-            $payload = "<i class='fa {$branch['icon']}'></i>&nbsp;<strong>{$branch['title']}</strong>";
+            $payload = "<i class='fa'></i>&nbsp;<strong>{$branch['title']}[{$branch['view_code']}]</strong>";
 
             if (!isset($branch['children'])) {
+                /*
                 if (url()->isValidUrl($branch['uri'])) {
                     $uri = $branch['uri'];
                 } else {
                     $uri = admin_url($branch['uri']);
-                }
+                }*/
+                $uri = "";
 
                 $payload .= "&nbsp;&nbsp;&nbsp;<a href=\"$uri\" class=\"dd-nodrag\">$uri</a>";
             }
@@ -105,7 +103,7 @@ class EmpController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->title(trans('admin.menu'))
+            ->title(trans('admin.emp'))
             ->description(trans('admin.edit'))
             ->row($this->form()->edit($id));
     }
@@ -117,9 +115,8 @@ class EmpController extends Controller
      */
     public function form()
     {
-        $menuModel = config('admin.database.menu_model');
-        $permissionModel = config('admin.database.permissions_model');
-        $roleModel = config('admin.database.roles_model');
+        $menuModel = config('admin.database.emp_model');
+
 
         $form = new Form(new $menuModel());
 
@@ -127,12 +124,11 @@ class EmpController extends Controller
 
         $form->select('parent_id', trans('admin.parent_id'))->options($menuModel::selectOptions());
         $form->text('title', trans('admin.title'))->rules('required');
-        $form->icon('icon', trans('admin.icon'))->default('fa-bars')->rules('required')->help($this->iconHelp());
-        $form->text('uri', trans('admin.uri'));
-        $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
-        if ($form->model()->withPermission()) {
-            $form->select('permission', trans('admin.permission'))->options($permissionModel::pluck('name', 'slug'));
-        }
+
+        $form->text('view_code', trans('admin.view_code'))->rules('required');
+        $form->text('full_name', trans('admin.full_name'))->rules('required');
+
+        $form->hidden('order')->default(1);
 
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));
