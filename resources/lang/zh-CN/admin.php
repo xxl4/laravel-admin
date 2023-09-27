@@ -103,4 +103,11 @@ return [
     'prev'                   => '上一步',
     'next'                   => '下一步',
     'quick_create'           => '快速创建',
+    
+    'view_code'              => '公司代码',
+    'full_name'              => '公司全称',
+    'area_code'              => '区域编码',
+    'remarks'              => '备注信息',
+    'corp_code'              => '租户代码',
+    'corp_name'              => '租户名称',
 ];
