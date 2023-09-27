@@ -101,4 +101,16 @@ class Emp extends Model
             $model->roles()->detach();
         });
     }
+
+    /**
+     * 
+     * 
+     */
+    public function users():BelongsToMany {
+
+        $pivotTable = config('admin.database.emp_user_table');
+        $relatedModel = config('admin.database.emp_model');
+
+        return $this->belongsToMany($relatedModel, $pivotTable, 'user_id', 'user_id');
+    }
 }
