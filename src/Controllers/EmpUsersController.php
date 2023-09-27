@@ -13,7 +13,7 @@ class EmpUsersController extends AdminController
      */
     protected function title()
     {
-        return trans('admin.roles');
+        return trans('admin.emp-users');
     }
 
     /**
@@ -23,9 +23,9 @@ class EmpUsersController extends AdminController
      */
     protected function grid()
     {
-        $roleModel = config('admin.database.emp_users_model');
+        $Model = config('admin.database.emp_users_model');
 
-        $grid = new Grid(new $roleModel());
+        $grid = new Grid(new $Model());
 
         $grid->column('id', 'ID')->sortable();
         $grid->column('emp_name', trans('admin.slug'));
@@ -64,9 +64,9 @@ class EmpUsersController extends AdminController
      */
     protected function detail($id)
     {
-        $roleModel = config('admin.database.emp_users_model');
+        $Model = config('admin.database.emp_users_model');
 
-        $show = new Show($roleModel::findOrFail($id));
+        $show = new Show($Model::findOrFail($id));
 
         $show->field('id', 'ID');
         $show->field('slug', trans('admin.slug'));
@@ -87,16 +87,25 @@ class EmpUsersController extends AdminController
      */
     public function form()
     {
-        $permissionModel = config('admin.database.permissions_model');
-        $roleModel = config('admin.database.roles_model');
+        //$permissionModel = config('admin.database.permissions_model');
+        $Model = config('admin.database.emp_users_model');
 
-        $form = new Form(new $roleModel());
+        $form = new Form(new $Model());
 
         $form->display('id', 'ID');
 
-        $form->text('slug', trans('admin.slug'))->rules('required');
-        $form->text('name', trans('admin.name'))->rules('required');
-        $form->listbox('permissions', trans('admin.permissions'))->options($permissionModel::all()->pluck('name', 'id'));
+        $form->text('emp_name', trans('admin.emp_name'))->rules('required');
+        $form->text('emp_name_en', trans('admin.emp_name_en'));
+        $form->text('office_code', trans('admin.office_code'));
+        $form->text('office_name', trans('admin.office_name'));
+        $form->text('company_code', trans('admin.company_code'));
+        $form->text('company_name', trans('admin.company_name'));
+        $form->text('remarks', trans('admin.remarks'));
+        $form->text('corp_code', trans('admin.corp_code'));
+        $form->text('corp_name', trans('admin.corp_name'));
+
+        //$form->text('name', trans('admin.name'))->rules('required');
+        //$form->listbox('permissions', trans('admin.permissions'))->options($permissionModel::all()->pluck('name', 'id'));
 
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));

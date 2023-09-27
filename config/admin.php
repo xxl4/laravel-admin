@@ -185,7 +185,7 @@ return [
 
         //Emp user tables and model
         'emp_users_table' => 'admin_emp_users',
-        'emp_users_model' => Nicelizhi\Admin\Auth\Database\EmpUsers::class,
+        'emp_users_model' => Nicelizhi\Admin\Auth\Database\EmpUser::class,
 
         // area tables and model
         'area_table' => 'admin_area',
