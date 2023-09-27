@@ -103,11 +103,20 @@ return [
     'prev'                   => '上一步',
     'next'                   => '下一步',
     'quick_create'           => '快速创建',
-    
+
+    'emp'                   => '机构',
+    'emp-users'            => '机构用户',
     'view_code'              => '公司代码',
     'full_name'              => '公司全称',
     'area_code'              => '区域编码',
     'remarks'              => '备注信息',
     'corp_code'              => '租户代码',
     'corp_name'              => '租户名称',
+
+    'emp_name'              => '员工姓名',
+    'emp_name_en'           => '英文名',
+    'office_code'           => '机构编码',
+    'office_name'           => '机构名称',
+    'company_code'          => '公司编码',
+    'company_name'          => '公司名称',
 ];

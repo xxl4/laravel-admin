@@ -28,12 +28,12 @@ class EmpUsersController extends AdminController
         $grid = new Grid(new $Model());
 
         $grid->column('id', 'ID')->sortable();
-        $grid->column('emp_name', trans('admin.slug'));
-        $grid->column('emp_name_en', trans('admin.slug'));
-        $grid->column('office_code', trans('admin.name'));
-        $grid->column('office_name', trans('admin.name'));
-        $grid->column('company_code', trans('admin.name'));
-        $grid->column('company_name', trans('admin.name'));
+        $grid->column('emp_name', trans('admin.emp_name'));
+        $grid->column('emp_name_en', trans('admin.emp_name_en'));
+        $grid->column('office_code', trans('admin.office_code'));
+        $grid->column('office_name', trans('admin.office_name'));
+        $grid->column('company_code', trans('admin.company_code'));
+        $grid->column('company_name', trans('admin.company_name'));
 
         //$grid->column('permissions', trans('admin.permission'))->pluck('name')->label();
 
