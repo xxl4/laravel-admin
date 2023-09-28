@@ -209,6 +209,7 @@ return [
         'role_users_table'       => 'admin_role_users',
         'role_permissions_table' => 'admin_role_permissions',
         'role_menu_table'        => 'admin_role_menu',
+        'role_emp_table'         => 'admin_role_emp',
     ],
 
     /*

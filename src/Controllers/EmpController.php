@@ -34,11 +34,14 @@ class EmpController extends Controller
                     $form->action(admin_url('auth/emp'));
 
                     $empModel = config('admin.database.emp_model');
+                    $permissionModel = config('admin.database.permissions_model');
+                    $roleModel = config('admin.database.roles_model');
                     $form->select('parent_id', trans('admin.parent_id'))->options($empModel::selectOptions());
                     $form->text('title', trans('admin.title'))->rules('required');
                     $form->text('view_code', trans('admin.view_code'))->rules('required');
                     $form->text('full_name', trans('admin.full_name'))->rules('required');
-
+                    $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
+                    
                     $form->hidden('order')->default(1);
                     
                     $form->hidden('_token')->default(csrf_token());
@@ -115,18 +118,22 @@ class EmpController extends Controller
      */
     public function form()
     {
-        $menuModel = config('admin.database.emp_model');
+        $empModel = config('admin.database.emp_model');
+        $permissionModel = config('admin.database.permissions_model');
+        $roleModel = config('admin.database.roles_model');
 
 
-        $form = new Form(new $menuModel());
+        $form = new Form(new $empModel());
 
         $form->display('id', 'ID');
 
-        $form->select('parent_id', trans('admin.parent_id'))->options($menuModel::selectOptions());
+        $form->select('parent_id', trans('admin.parent_id'))->options($empModel::selectOptions());
         $form->text('title', trans('admin.title'))->rules('required');
 
         $form->text('view_code', trans('admin.view_code'))->rules('required');
         $form->text('full_name', trans('admin.full_name'))->rules('required');
+
+        $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
 
         $form->hidden('order')->default(1);
 
