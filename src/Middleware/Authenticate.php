@@ -21,6 +21,9 @@ class Authenticate
 
         $redirectTo = admin_base_path(config('admin.auth.redirect_to', 'auth/login'));
 
+        // add refer uri for redirect todo
+
+
         if (Admin::guard()->guest() && !$this->shouldPassThrough($request)) {
             return redirect()->to($redirectTo);
         }

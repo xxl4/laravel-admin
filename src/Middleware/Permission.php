@@ -37,6 +37,8 @@ class Permission
             return $next($request);
         }
 
+        // add emp role group check todo    
+
         if (!Admin::user()->allPermissions()->first(function ($permission) use ($request) {
             return $permission->shouldPassThrough($request);
         })) {

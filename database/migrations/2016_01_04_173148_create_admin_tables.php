@@ -87,6 +87,13 @@ class CreateAdminTables extends Migration
             $table->timestamps();
         });
 
+        Schema::create(config('admin.database.role_emp_table'), function (Blueprint $table) {
+            $table->integer('role_id');
+            $table->integer('emp_id');
+            $table->index(['role_id', 'emp_id']);
+            $table->timestamps();
+        });
+
         Schema::create(config('admin.database.operation_log_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
@@ -146,5 +153,6 @@ class CreateAdminTables extends Migration
         Schema::dropIfExists(config('admin.database.operation_log_table'));
         Schema::dropIfExists(config('admin.database.emp_table'));
         Schema::dropIfExists(config('admin.database.emp_users_table'));
+        Schema::dropIfExists(config('admin.database.role_emp_table'));
     }
 }

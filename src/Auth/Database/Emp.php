@@ -52,11 +52,11 @@ class Emp extends Model
      */
     public function roles(): BelongsToMany
     {
-        $pivotTable = config('admin.database.role_menu_table');
+        $pivotTable = config('admin.database.role_emp_table');
 
         $relatedModel = config('admin.database.roles_model');
 
-        return $this->belongsToMany($relatedModel, $pivotTable, 'menu_id', 'role_id');
+        return $this->belongsToMany($relatedModel, $pivotTable, 'emp_id', 'role_id');
     }
 
     /**
@@ -100,5 +100,17 @@ class Emp extends Model
         static::deleting(function ($model) {
             $model->roles()->detach();
         });
+    }
+
+    /**
+     * 
+     * 
+     */
+    public function users():BelongsToMany {
+
+        $pivotTable = config('admin.database.emp_user_table');
+        $relatedModel = config('admin.database.emp_model');
+
+        return $this->belongsToMany($relatedModel, $pivotTable, 'user_id', 'user_id');
     }
 }

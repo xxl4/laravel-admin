@@ -88,6 +88,7 @@ class UserController extends AdminController
         $userModel = config('admin.database.users_model');
         $permissionModel = config('admin.database.permissions_model');
         $roleModel = config('admin.database.roles_model');
+        $empModel = config('admin.database.emp_model');
 
         $form = new Form(new $userModel());
 
@@ -111,6 +112,7 @@ class UserController extends AdminController
 
         $form->multipleSelect('roles', trans('admin.roles'))->options($roleModel::all()->pluck('name', 'id'));
         $form->multipleSelect('permissions', trans('admin.permissions'))->options($permissionModel::all()->pluck('name', 'id'));
+        $form->multipleSelect('emp', trans('admin.emp'))->options($empModel::all()->pluck('title', 'id'));
 
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));

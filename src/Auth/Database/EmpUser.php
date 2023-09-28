@@ -5,6 +5,7 @@ namespace Nicelizhi\Admin\Auth\Database;
 use Nicelizhi\Admin\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EmpUser extends Model
 {
@@ -36,5 +37,18 @@ class EmpUser extends Model
     protected static function boot()
     {
         parent::boot();
+    }
+
+    public function user():BelongsTo {
+
+        $relatedModel = config('admin.database.users_model');
+        return $this->belongsTo($relatedModel, "id", "user_id");
+    }
+
+
+    public function emp(): BelongsTo {
+
+        $relatedModel = config('admin.database.emp_model');
+        return $this->belongsTo($relatedModel,"view_code", "company_code");
     }
 }
