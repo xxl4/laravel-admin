@@ -113,18 +113,4 @@ class Emp extends Model
 
         return $this->belongsToMany($relatedModel, $pivotTable, 'user_id', 'user_id');
     }
-
-    /**
-     * A role belongs to many users.
-     *
-     * @return BelongsToMany
-     */
-    public function administrators(): BelongsToMany
-    {
-        $pivotTable = config('admin.database.emp_users_table');
-
-        $relatedModel = config('admin.database.users_model');
-
-        return $this->belongsToMany($relatedModel, $pivotTable, 'role_id', 'user_id');
-    }
 }

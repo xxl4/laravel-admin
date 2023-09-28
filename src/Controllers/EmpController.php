@@ -140,6 +140,11 @@ class EmpController extends Controller
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));
 
+        //
+        $form->saved(function($form){
+
+        });
+
         return $form;
     }
 

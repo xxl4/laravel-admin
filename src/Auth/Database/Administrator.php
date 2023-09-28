@@ -97,10 +97,11 @@ class Administrator extends Model implements AuthenticatableContract
      */
     public function emp(): BelongsToMany
     {
+
         $pivotTable = config('admin.database.emp_users_table');
 
         $relatedModel = config('admin.database.emp_model');
 
-        return $this->belongsToMany($relatedModel, $pivotTable, 'user_id', 'user_id');
+        return $this->belongsToMany($relatedModel, $pivotTable, 'company_code', 'user_id');
     }
 }
