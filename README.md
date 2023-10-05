@@ -43,6 +43,15 @@ Bug Report
 
 ## Extensions
 
++ [laravel admin products](https://github.com/nicelizhi/laravel-admin-products)
++ [laravel admin orders](https://github.com/nicelizhi/laravel-admin-orders)
++ [laravel admin category](https://github.com/nicelizhi/laravel-admin-category)
+
++ [laravel admin taobao](https://github.com/nicelizhi/laravel-admin-taobao)
++ [laravel admin douyin](https://github.com/nicelizhi/laravel-admin-douyin)
++ [laravel admin JD](https://github.com/nicelizhi/laravel-admin-jd)
++ [laravel admin Baidu](https://github.com/nicelizhi/laravel-admin-baidu)
++ [laravel admin Amazon](https://github.com/nicelizhi/laravel-admin-amazon)
 
 
 
