@@ -167,6 +167,10 @@ class AppsController extends AdminController
         }
     }
 
+    public function news(Content $content) {
+        return $content->view("admin::apps.news");
+    }
+
     /**
      * 
      * 用户登录页面
