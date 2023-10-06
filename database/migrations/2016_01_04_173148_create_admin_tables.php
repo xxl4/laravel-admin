@@ -105,6 +105,16 @@ class CreateAdminTables extends Migration
             $table->timestamps();
         });
 
+        Schema::create(config('admin.database.apps_table'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name',200);
+            $table->string('desc', 200);
+            $table->string('code', 100);
+            $table->string('ver', 20);
+            $table->string('vernumber', 12);
+            $table->timestamps();
+        });
+
         // emp table
         Schema::create(config('admin.database.emp_table'), function (Blueprint $table) {
             $table->increments('id');
@@ -154,5 +164,6 @@ class CreateAdminTables extends Migration
         Schema::dropIfExists(config('admin.database.emp_table'));
         Schema::dropIfExists(config('admin.database.emp_users_table'));
         Schema::dropIfExists(config('admin.database.role_emp_table'));
+        Schema::dropIfExists(config('admin.database.apps_table'));
     }
 }

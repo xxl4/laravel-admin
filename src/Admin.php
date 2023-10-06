@@ -325,6 +325,10 @@ class Admin
                 $router->resource('auth/emp', 'EmpController', ['except' => ['create']])->names('admin.auth.emp');
                 $router->resource('auth/emp-users', 'EmpUsersController')->names('admin.auth.emp_users');
 
+
+                $router->any("auth/apps/login", 'AppsController@login')->name("admin.auth.apps.login");
+                $router->resource('auth/apps', 'AppsController')->names('admin.auth.apps'); // 针对APP 可以在线安装与卸载的动作
+
                 $router->post('_handle_form_', 'HandleController@handleForm')->name('admin.handle-form');
                 $router->post('_handle_action_', 'HandleController@handleAction')->name('admin.handle-action');
                 $router->get('_handle_selectable_', 'HandleController@handleSelectable')->name('admin.handle-selectable');

@@ -175,6 +175,10 @@ return [
         // Database connection for following tables.
         'connection' => '',
 
+        //apps tables and model
+        'apps_table' => 'admin_apps',
+        'apps_model' => Nicelizhi\Admin\Auth\Database\Apps::class,
+
         // User tables and model.
         'users_table' => 'admin_users',
         'users_model' => Nicelizhi\Admin\Auth\Database\Administrator::class,
