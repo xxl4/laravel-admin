@@ -42,14 +42,17 @@ Bug Report
 [https://github.com/nicelizhi/laravel-admin/issues](https://github.com/nicelizhi/laravel-admin/issues)
 
 ## Extensions
+[laravel admin products](https://github.com/nicelizhi/laravel-admin-products)
+[laravel admin orders](https://github.com/nicelizhi/laravel-admin-orders)
+[laravel admin category](https://github.com/nicelizhi/laravel-admin-category)
+[laravel admin taobao](https://github.com/nicelizhi/laravel-admin-taobao)
+[laravel admin douyin](https://github.com/nicelizhi/laravel-admin-douyin)
+[laravel admin JD](https://github.com/nicelizhi/laravel-admin-jd)
+[laravel admin Baidu](https://github.com/nicelizhi/laravel-admin-baidu)
+[laravel admin Amazon](https://github.com/nicelizhi/laravel-admin-amazon)
 [config](https://github.com/nicelizhi/laravel-admin-config)  
 [message](https://github.com/nicelizhi/laravel-admin-message)  
-[taobao/tamll](https://github.com/nicelizhi/laravel-admin-taobao)  
-[doudian](https://github.com/nicelizhi/laravel-admin-doudian)  
-[JD](https://github.com/nicelizhi/laravel-admin-jd)  
 [Amazon Books](https://github.com/nicelizhi/amazon-books)  
-
-More will add
 
 Other
 ------------
