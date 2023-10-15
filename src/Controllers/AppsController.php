@@ -144,7 +144,9 @@ class AppsController extends AdminController
         $cache_key = "apps_data";
         $body = Cache::get($cache_key);
         if($body==false) {
-            $url = config("admin.apps_url")."resource.json";
+            $api_url = config("admin.apps_url");
+            if(empty($api_url)) throw new \Exception("admin apps url is not config,pls check your admin php file");
+            $url = $api_url."resource.json";
             try {
                 $client = new \GuzzleHttp\Client();
                 $res = $client->request('GET', $url, [
