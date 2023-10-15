@@ -32,4 +32,5 @@
     <a href="https://github.com/nicelizhi/laravel-admin/" target="_blank">Github</a>
     <a href="https://github.com/nicelizhi/laravel-admin/wiki"  target="_blank">Wike</a>
     <a href="https://github.com/nicelizhi/laravel-admin/issues"  target="_blank">ISSUES</a>
+    <a href="https://github.com/nicelizhi/laravel-admin/discussions"  target="_blank">discussions</a>
 </div>
