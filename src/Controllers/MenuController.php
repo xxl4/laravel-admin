@@ -9,6 +9,7 @@ use Nicelizhi\Admin\Layout\Row;
 use Nicelizhi\Admin\Tree;
 use Nicelizhi\Admin\Widgets\Box;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 
 class MenuController extends Controller
 {
@@ -136,6 +137,38 @@ class MenuController extends Controller
 
         $form->display('created_at', trans('admin.created_at'));
         $form->display('updated_at', trans('admin.updated_at'));
+
+        //保存后回调
+        $form->saved(function (Form $form) {
+            //...插入到权限表，从而方便权限的管理与维护
+            
+            $model = config('admin.database.permissions_model');
+            $permissionModel = config('admin.database.permissions_model');
+
+            $http_methods = array_combine($model::$httpMethods, $model::$httpMethods);
+
+            $http_path = $form->model()->uri."/*";
+            
+            foreach($http_methods as $key=>$http_method) {
+                $name = Str::slug($form->model()->uri)."_".strtolower($http_method);
+                $slug = Str::slug($form->model()->uri)."_".strtolower($http_method);
+                $http_method_arr = [];
+                $http_method_arr[] = $http_method;
+                
+                //check the data 
+                $permission = $permissionModel::where("name", $name)->where("slug", $slug)->where("http_method", $http_method)->where("http_path", $http_path)->first();
+                if(is_null($permission)) {
+                    $permission = new $permissionModel();
+                    $permission->name = $name;
+                    $permission->slug = $slug;
+                    $permission->http_path = $http_path;
+                    $permission->http_method = $http_method_arr;
+                    $permission->save();
+                }
+            }
+            
+
+        });
 
         return $form;
     }
