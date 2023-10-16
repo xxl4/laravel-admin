@@ -27,6 +27,8 @@ class EmpUsersController extends AdminController
 
         $grid = new Grid(new $Model());
 
+        $grid->model()->orderBy('id', 'DESC');
+
         $grid->column('id', 'ID')->sortable();
         $grid->column('emp_name', trans('admin.emp_name'));
         $grid->column('emp_name_en', trans('admin.emp_name_en'));
