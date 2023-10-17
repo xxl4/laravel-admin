@@ -150,8 +150,8 @@ class CreateAdminTables extends Migration
             $table->integer('sender_id');
             $table->integer('receiver_id');
             $table->integer("pid")->default(0)->comment("message pid");
-            $table->integer("readed", 1)->default(0);
-            $table->integer("deleted", 1)->default(0);
+            $table->tinyInteger("readed")->default(0);
+            $table->tinyInteger("deleted")->default(0);
             $table->string('title',150);
             $table->text('message',150);
             $table->dateTime("read_date")->comment("read date");
