@@ -327,7 +327,7 @@ class Admin
 
 
                 $router->any("auth/apps/login", 'AppsController@login')->name("admin.auth.apps.login");
-                $router->any("auth/apps/news", 'AppsController@news')->name("admin.auth.apps.news");
+                $router->any("auth/apps/new", 'AppsController@news')->name("admin.auth.apps.new");
                 $router->resource('auth/apps', 'AppsController')->names('admin.auth.apps'); // 针对APP 可以在线安装与卸载的动作
 
                 $router->post('_handle_form_', 'HandleController@handleForm')->name('admin.handle-form');
