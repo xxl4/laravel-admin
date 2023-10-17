@@ -20,9 +20,35 @@
         {!! Admin::getNavbar()->render('left') !!}
         </ul>
 
+
+
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+
+                <!-- Notifications: style can be found in dropdown.less -->
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="label label-warning">0</span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="header">You have 0 notifications</li>
+                        <li>
+                        <!-- inner menu: contains the actual data -->
+                        <ul class="menu">
+                            <li>
+                            <a href="#">
+                                <i class="ion ion-ios-people info"></i> Notification title
+                            </a>
+                            </li>
+                        </ul>
+                        </li>
+                        <li class="footer"><a href="{{ admin_url('auth/messages') }}">View all</a></li>
+                    </ul>
+
+                </li>
 
                 {!! Admin::getNavbar()->render() !!}
 
@@ -59,6 +85,8 @@
                 {{--<li>--}}
                     {{--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--}}
                 {{--</li>--}}
+
+                
             </ul>
         </div>
     </nav>
