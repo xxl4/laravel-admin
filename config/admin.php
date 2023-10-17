@@ -207,6 +207,10 @@ return [
         'menu_table' => 'admin_menu',
         'menu_model' => Nicelizhi\Admin\Auth\Database\Menu::class,
 
+        // Messages table and model
+        'messages_table' => 'admin_messages',
+        'messages_model' => Nicelizhi\Admin\Auth\Database\Messages::class,
+
         // Pivot table for table above.
         'operation_log_table'    => 'admin_operation_log',
         'user_permissions_table' => 'admin_user_permissions',
