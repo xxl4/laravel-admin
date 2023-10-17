@@ -123,12 +123,19 @@ SCRIPT;
             }
         }
 
-        return sprintf(
-            "<a href='javascript:void(0);' class='%s %s' %s>%s</a>",
-            $this->getElementClass(),
-            (!empty($this->cssClasses)) ? implode(' ', $this->cssClasses) : '',
-            $modalId ? "modal='{$modalId}'" : '',
-            $this->name()
-        );
+        // when config the html info
+        if($content = $this->html()) {
+            return $content;
+        }else{
+            return sprintf(
+                "<a href='javascript:void(0);' class='%s %s' %s>%s</a>",
+                $this->getElementClass(),
+                (!empty($this->cssClasses)) ? implode(' ', $this->cssClasses) : '',
+                $modalId ? "modal='{$modalId}'" : '',
+                $this->name()
+            );
+        }
+
+        
     }
 }
