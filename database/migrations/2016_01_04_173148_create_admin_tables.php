@@ -143,6 +143,20 @@ class CreateAdminTables extends Migration
             $table->string("remarks", 100)->nullable();
             $table->timestamps();
         });
+
+        // message_table
+        Schema::create(config('admin.database.message_table'), function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('sender_id');
+            $table->integer('receiver_id');
+            $table->integer("pid")->default(0)->comment("message pid");
+            $table->integer("readed", 1)->default(0);
+            $table->integer("deleted", 1)->default(0);
+            $table->string('title',150);
+            $table->text('message',150);
+            $table->dateTime("read_date")->comment("read date");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -165,5 +179,6 @@ class CreateAdminTables extends Migration
         Schema::dropIfExists(config('admin.database.emp_users_table'));
         Schema::dropIfExists(config('admin.database.role_emp_table'));
         Schema::dropIfExists(config('admin.database.apps_table'));
+        Schema::dropIfExists(config('admin.database.message_table'));
     }
 }
