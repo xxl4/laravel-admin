@@ -69,6 +69,8 @@ class MessagesController extends AdminController
         $show->field('created_at', trans('admin.created_at'));
         $show->field('updated_at', trans('admin.updated_at'));
 
+        //todo update message read status and read time
+
         return $show;
     }
 
