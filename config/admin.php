@@ -209,7 +209,7 @@ return [
 
         // Messages table and model
         'messages_table' => 'admin_messages',
-        'messages_model' => Nicelizhi\Admin\Auth\Database\Messages::class,
+        'messages_model' => Nicelizhi\Admin\Auth\Database\Message::class,
 
         // Pivot table for table above.
         'operation_log_table'    => 'admin_operation_log',

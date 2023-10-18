@@ -2,9 +2,10 @@
 
 namespace Nicelizhi\Admin\Controllers;
 
-use Nicelizhi\Admin\Auth\Database\Messages;
+use Nicelizhi\Admin\Auth\Database\Message;
 use Nicelizhi\Admin\Grid;
 use Illuminate\Support\Arr;
+use Nicelizhi\Admin\Show;
 
 class MessagesController extends AdminController
 {
@@ -21,9 +22,8 @@ class MessagesController extends AdminController
      */
     protected function grid()
     {
-        $grid = new Grid(new Messages());
+        $grid = new Grid(new Message());
 
-        \Nicelizhi\Admin\Facades\Admin::user()->receiver_message;
 
         $grid->model()->orderBy('id', 'DESC');
 
@@ -47,6 +47,29 @@ class MessagesController extends AdminController
         });
 
         return $grid;
+    }
+
+    /**
+     * Make a show builder.
+     *
+     * @param mixed $id
+     *
+     * @return Show
+     */
+    protected function detail($id)
+    {
+        $Model = config('admin.database.messages_model');
+
+        $show = new Show($Model::findOrFail($id));
+
+        //$show->field('id', 'ID');
+        $show->field('title', 'Title');
+        $show->field('message', 'Message');
+       
+        $show->field('created_at', trans('admin.created_at'));
+        $show->field('updated_at', trans('admin.updated_at'));
+
+        return $show;
     }
 
     /**

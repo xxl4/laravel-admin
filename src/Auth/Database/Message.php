@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @method where($parent_id, $id)
  */
-class Messages extends Model
+class Message extends Model
 {
     use DefaultDatetimeFormat;
     /**
@@ -21,7 +21,7 @@ class Messages extends Model
      *
      * @var array
      */
-    //protected $fillable = ['pid', 'title', 'sender_id','receiver_id'];
+    protected $fillable = ['pid', 'title', 'sender_id','receiver_id'];
 
     /**
      * Create a new Eloquent model instance.

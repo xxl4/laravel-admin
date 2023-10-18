@@ -109,6 +109,7 @@ class Administrator extends Model implements AuthenticatableContract
      * Get User Receiver Message
      */
     public function receiver_message() {
-        return $this->hasMany(Message::class, "receiver_id", "id");
+        //$userTable = config('admin.database.users_model');
+        return $this->hasMany(Message::class,  "receiver_id", "id");
     }
 }
