@@ -60,7 +60,9 @@ class MessagesController extends AdminController
     {
         $Model = config('admin.database.messages_model');
 
-        $show = new Show($Model::findOrFail($id));
+        $info = $Model::findOrFail($id);
+
+        $show = new Show($info);
 
         //$show->field('id', 'ID');
         $show->field('title', 'Title');
@@ -70,6 +72,10 @@ class MessagesController extends AdminController
         $show->field('updated_at', trans('admin.updated_at'));
 
         //todo update message read status and read time
+
+        $info->readed = 1;
+        $info->read_date = date("Y-m-d H:i:s");
+        $info->save();
 
         return $show;
     }
