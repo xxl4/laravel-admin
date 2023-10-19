@@ -6,6 +6,7 @@ use Nicelizhi\Admin\Auth\Database\Message;
 use Nicelizhi\Admin\Grid;
 use Illuminate\Support\Arr;
 use Nicelizhi\Admin\Show;
+use Nicelizhi\Admin\Facades\Admin;
 
 class MessagesController extends AdminController
 {
@@ -37,6 +38,8 @@ class MessagesController extends AdminController
             $actions->disableEdit();
             $actions->disableView();
         });
+
+        $grid->model()->where("receiver_id", Admin::user()->id);
 
         $grid->disableCreateButton();
 
