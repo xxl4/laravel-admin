@@ -31,6 +31,16 @@ Configurations
 ------------
 The file `config/admin.php` contains an array of configurations, you can find the default configurations in there.
 
+Modules
+------------
+User  
+Roce  
+Permission  
+Log  
+Menu  
+Organizational  
+Message  
+
 Right to left support
 ------------
 just go to this path `<YOUR_PROJECT_PATH>\vendor\Nicelizhi\laravel-admin\src\Traits\HasAssets.php` and modify `$baseCss` array for loading right to left (rtl) version of bootstap and AdminLTE css files.    
