@@ -36,7 +36,7 @@ class MessagesController extends AdminController
 
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableEdit();
-            $actions->disableView();
+            //$actions->disableView();
         });
 
         $grid->model()->where("receiver_id", Admin::user()->id);
