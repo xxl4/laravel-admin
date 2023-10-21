@@ -18,5 +18,5 @@
             <i class="fa fa-{{ $icon }}"></i>
         </div>
 
-    <input type="{{ $type }}" class="form-control {{ $id }}" placeholder="{{$placeholder}}" name="{{$name}}" value="{{ request($name, $value) }}">
+    <input type="{{ $type }}" autocomplete="on" class="form-control {{ $id }} autocomplete" placeholder="{{$placeholder}}" name="{{$name}}" value="{{ request($name, $value) }}">
 </div>
