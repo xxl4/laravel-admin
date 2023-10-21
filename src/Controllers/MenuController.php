@@ -147,27 +147,28 @@ class MenuController extends Controller
 
             $http_methods = array_combine($model::$httpMethods, $model::$httpMethods);
 
-            $http_path = $form->model()->uri."/*";
+            // 如果 uri 为空的时候就不用添加处理
+            if(!empty($form->model()->uri)) {
+                $http_path = $form->model()->uri."/*";
             
-            foreach($http_methods as $key=>$http_method) {
-                $name = Str::slug($form->model()->uri)."_".strtolower($http_method);
-                $slug = Str::slug($form->model()->uri)."_".strtolower($http_method);
-                $http_method_arr = [];
-                $http_method_arr[] = $http_method;
-                
-                //check the data 
-                $permission = $permissionModel::where("name", $name)->where("slug", $slug)->where("http_method", $http_method)->where("http_path", $http_path)->first();
-                if(is_null($permission)) {
-                    $permission = new $permissionModel();
-                    $permission->name = $name;
-                    $permission->slug = $slug;
-                    $permission->http_path = $http_path;
-                    $permission->http_method = $http_method_arr;
-                    $permission->save();
+                foreach($http_methods as $key=>$http_method) {
+                    $name = Str::slug($form->model()->uri)."_".strtolower($http_method);
+                    $slug = Str::slug($form->model()->uri)."_".strtolower($http_method);
+                    $http_method_arr = [];
+                    $http_method_arr[] = $http_method;
+                    
+                    //check the data 
+                    $permission = $permissionModel::where("name", $name)->where("slug", $slug)->where("http_method", $http_method)->where("http_path", $http_path)->first();
+                    if(is_null($permission)) {
+                        $permission = new $permissionModel();
+                        $permission->name = $name;
+                        $permission->slug = $slug;
+                        $permission->http_path = $http_path;
+                        $permission->http_method = $http_method_arr;
+                        $permission->save();
+                    }
                 }
             }
-            
-
         });
 
         return $form;
