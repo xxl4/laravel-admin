@@ -3,6 +3,7 @@
 namespace Nicelizhi\Admin\Grid\Exporters;
 
 use Nicelizhi\Admin\Grid;
+use Illuminate\Support\Facades\Log;
 
 abstract class AbstractExporter implements ExporterInterface
 {
@@ -107,6 +108,7 @@ abstract class AbstractExporter implements ExporterInterface
             $queryBuilder = $queryBuilder->whereIn($keyName, $scope->pluck($keyName));
         }
 
+        Log::info("query Builde". $queryBuilder);
         return $queryBuilder;
     }
 
