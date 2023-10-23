@@ -1,5 +1,8 @@
 # Laravel Admin Document
 
+[![Release](https://img.shields.io/github/release/nicelizhi/laravel-admin.svg?style=flat-square)](https://github.com/nicelizhi/laravel-admin/releases)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nicelizhi/laravel-admin)
+
 Requirements
 ------------
  - PHP >= 7.2.5
