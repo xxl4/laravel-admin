@@ -1,4 +1,7 @@
 theme: jekyll-theme-cayman
+show_downloads: true
+title: Laravel Admin 
+description: Build a full-featured administrative interface quickly Laravel-admin
 lsi: false
 safe: true
 source: [/]
