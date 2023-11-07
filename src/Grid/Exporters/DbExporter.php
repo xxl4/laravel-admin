@@ -157,34 +157,34 @@ class DbExporter extends AbstractExporter
             call_user_func($this->callback, $this);
         }
 
-        $response = function () {
-            $handle = fopen('php://output', 'w');
-            $titles = [];
-            fwrite($handle, chr(0xEF).chr(0xBB).chr(0xBF)); //导出的CSV文件是无BOM编码UTF-8，而我们通常使用UTF-8编码格式都是有BOM的。所以添加BOM于CSV中
-            $this->chunk(function ($collection) use ($handle, &$titles) {
-                Column::setOriginalGridModels($collection);
+        // $response = function () {
+        //     $handle = fopen('php://output', 'w');
+        //     $titles = [];
+        //     fwrite($handle, chr(0xEF).chr(0xBB).chr(0xBF)); //导出的CSV文件是无BOM编码UTF-8，而我们通常使用UTF-8编码格式都是有BOM的。所以添加BOM于CSV中
+        //     $this->chunk(function ($collection) use ($handle, &$titles) {
+        //         Column::setOriginalGridModels($collection);
 
-                $original = $current = $collection->toArray();
+        //         $original = $current = $collection->toArray();
 
-                $this->grid->getColumns()->map(function (Column $column) use (&$current) {
-                    $current = $column->fill($current);
-                    $this->grid->columnNames[] = $column->getName();
-                });
+        //         $this->grid->getColumns()->map(function (Column $column) use (&$current) {
+        //             $current = $column->fill($current);
+        //             $this->grid->columnNames[] = $column->getName();
+        //         });
 
-                // Write title
-                if (empty($titles)) {
-                    fputcsv($handle, $titles = $this->getVisiableTitles());
-                }
+        //         // Write title
+        //         if (empty($titles)) {
+        //             fputcsv($handle, $titles = $this->getVisiableTitles());
+        //         }
 
-                // Write rows
-                foreach ($current as $index => $record) {
-                    fputcsv($handle, $this->getVisiableFields($record, $original[$index]));
-                }
-            });
-            fclose($handle);
-        };
+        //         // Write rows
+        //         foreach ($current as $index => $record) {
+        //             fputcsv($handle, $this->getVisiableFields($record, $original[$index]));
+        //         }
+        //     });
+        //     fclose($handle);
+        // };
 
-        response()->stream($response, 200, $this->getHeaders())->send();
+        // response()->stream($response, 200, $this->getHeaders())->send();
 
         exit;
     }
