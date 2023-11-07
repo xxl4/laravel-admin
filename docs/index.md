@@ -1,3 +1,10 @@
+# Laravel Admin Document
+
+[![Release](https://img.shields.io/github/release/nicelizhi/laravel-admin.svg?style=flat-square)](https://github.com/nicelizhi/laravel-admin/releases)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nicelizhi/laravel-admin)
+[![Download](https://img.shields.io/packagist/dt/nicelizhi/laravel-admin.svg?style=flat-square)](https://github.com/nicelizhi/go-admin-api)
+[![Scrutinizer](https://scrutinizer-ci.com/g/nicelizhi/laravel-admin/badges/quality-score.png?b=master)]
+
 Requirements
 ------------
  - PHP >= 7.2.5

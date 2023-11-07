@@ -65,6 +65,23 @@ return [
         'middleware' => ['web', 'admin'],
     ],
 
+    /** 
+     * 
+     * Laravel admin message sound
+     * 
+    */
+    'enable_message_sound' => env('ADMIN_MESSAGE_SOUND', false),
+    
+    /**
+     * message sound type
+     * 
+     */
+    'message_type' => [
+        'default'   => '/Audio/success.mp3',
+        'success'   => '/Audio/success.mp3',
+        'error'     => '/Audio/失败.mp3',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Laravel-admin install directory
@@ -206,6 +223,10 @@ return [
         // Menu table and model.
         'menu_table' => 'admin_menu',
         'menu_model' => Nicelizhi\Admin\Auth\Database\Menu::class,
+
+        // Messages table and model
+        'messages_table' => 'admin_messages',
+        'messages_model' => Nicelizhi\Admin\Auth\Database\Message::class,
 
         // Pivot table for table above.
         'operation_log_table'    => 'admin_operation_log',

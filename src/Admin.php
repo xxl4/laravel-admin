@@ -25,7 +25,7 @@ class Admin
      *
      * @var string
      */
-    const VERSION = '2.0.0';
+    const VERSION = '1.0.5';
 
     /**
      * @var Navbar
@@ -245,6 +245,10 @@ class Admin
         return $this->guard()->user();
     }
 
+    public function receiver_message() {
+        
+    }
+
     /**
      * Attempt to get the guard from the local cache.
      *
@@ -324,6 +328,7 @@ class Admin
                 $router->resource('auth/logs', 'LogController', ['only' => ['index', 'destroy']])->names('admin.auth.logs');
                 $router->resource('auth/emp', 'EmpController', ['except' => ['create']])->names('admin.auth.emp');
                 $router->resource('auth/emp-users', 'EmpUsersController')->names('admin.auth.emp_users');
+                $router->resource('auth/messages', 'MessagesController')->names("admin.auth.messages");
 
 
                 $router->any("auth/apps/login", 'AppsController@login')->name("admin.auth.apps.login");

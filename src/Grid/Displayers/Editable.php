@@ -275,6 +275,7 @@ STR;
         $this->original = $this->type === 'textarea' ? $this->getColumn()->getOriginal() : $this->value; 
         //$this->original = $this->type === 'text' ? "" : $this->original;
         $this->original = htmlentities($this->original ?? '');
+        $this->original = str_replace("'", '"', $this->original); // 在有“”
         
 
 

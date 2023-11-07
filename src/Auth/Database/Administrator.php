@@ -104,4 +104,12 @@ class Administrator extends Model implements AuthenticatableContract
 
         return $this->belongsToMany($relatedModel, $pivotTable, 'company_code', 'user_id');
     }
+
+    /**
+     * Get User Receiver Message
+     */
+    public function receiver_message() {
+        //$userTable = config('admin.database.users_model');
+        return $this->hasMany(Message::class,  "receiver_id", "id")->whereReaded(0);
+    }
 }

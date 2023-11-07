@@ -1,0 +1,14 @@
+theme: jekyll-theme-cayman
+show_downloads: true
+title: Laravel Admin 
+description: Build a full-featured administrative interface quickly Laravel-admin
+lsi: false
+safe: true
+source: [/]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge

@@ -19,10 +19,37 @@
         <ul class="nav navbar-nav hidden-sm visible-lg-block">
         {!! Admin::getNavbar()->render('left') !!}
         </ul>
-
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+
+                <!-- Notifications: style can be found in dropdown.less -->
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="label label-warning"><?php echo count(Admin::user()->receiver_message);?></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">You have <?php echo count(Admin::user()->receiver_message);?> notifications</li>
+                        <li>
+                        <!-- inner menu: contains the actual data -->
+                        <ul class="menu">
+                        <?php 
+                        $messages = Admin::user()->receiver_message;
+                        foreach($messages as $key=>$message) {
+                        ?>
+                            <li>
+                            <a href="{{ admin_url('auth/messages/'.$message->id) }}">
+                                <i class="ion ion-ios-people info"></i> <?php echo $message->title;?>
+                            </a>
+                            </li>
+                        <?php } ?>
+                        </ul>
+                        </li>
+                        <li class="footer"><a href="{{ admin_url('auth/messages') }}">View all</a></li>
+                    </ul>
+
+                </li>
 
                 {!! Admin::getNavbar()->render() !!}
 
@@ -59,6 +86,8 @@
                 {{--<li>--}}
                     {{--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--}}
                 {{--</li>--}}
+
+                
             </ul>
         </div>
     </nav>
