@@ -70,6 +70,7 @@ class Filter implements Renderable
         'contains'   => Filter\Like::class,
         'startsWith' => Filter\StartsWith::class,
         'endsWith'   => Filter\EndsWith::class,
+        'number'     => Filter\Number::class,
     ];
 
     /**

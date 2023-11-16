@@ -81,7 +81,7 @@ trait HasHeader
             $type = 'equal';
         }
 
-        if (in_array($type, ['equal', 'like', 'date', 'time', 'datetime'])) {
+        if (in_array($type, ['equal', 'like', 'date', 'time', 'datetime','number'])) {
             return $this->addHeader(new InputFilter($type));
         }
 
