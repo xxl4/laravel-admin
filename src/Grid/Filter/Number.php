@@ -22,8 +22,6 @@ class Number extends AbstractFilter
     {
         $value = Arr::get($inputs, $this->column);
 
-        var_dump($value);exit;
-
         if (is_null($value)) {
             return;
         }
