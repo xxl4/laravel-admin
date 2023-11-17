@@ -31,9 +31,15 @@ class InputFilter extends Filter
      */
     public function addBinding($value, Model $model)
     {
+        
         if (empty($value)) {
-            return;
+            //return;
         }
+        
+        if($value==NULL) {
+            return ;
+        }
+
 
         if ($this->type == 'like') {
             $model->where($this->getColumnName(), 'like', "%{$value}%");
