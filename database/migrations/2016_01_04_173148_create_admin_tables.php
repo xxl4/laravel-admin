@@ -133,12 +133,12 @@ class CreateAdminTables extends Migration
         Schema::create(config('admin.database.emp_users_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('epm_name',20);
+            $table->string('epm_name',20)->nullable();
             $table->string('epm_name_en',20)->nullable();
             $table->string('office_code',20)->nullable();
             $table->string('office_name',50)->nullable();
-            $table->string('compnay_code',20)->nullable();
-            $table->string('compnay_name',50)->nullable();
+            $table->string('company_code',20)->nullable();
+            $table->string('company_name',50)->nullable();
             $table->integer("status")->default(1);
             $table->string("remarks", 100)->nullable();
             $table->timestamps();
