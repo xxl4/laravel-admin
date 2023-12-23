@@ -26,7 +26,8 @@
         </li>
         <li class="divider"></li>
         <li class="text-right">
-            <button class="btn btn-sm btn-default column-select-all">{{ __('admin.all') }}</button>&nbsp;&nbsp;
+            <button class="btn btn-sm btn-default column-select-all">{{ __('admin.all') }}</button>
+            <button class="btn btn-sm btn-default column-select-unall">{{ __('admin.unall') }}</button>
             <button class="btn btn-sm btn-primary column-select-submit">{{ __('admin.submit') }}</button>
         </li>
     </ul>
@@ -85,6 +86,10 @@ $('.column-select-submit').on('click', function () {
 
 $('.column-select-all').on('click', function () {
     $('.column-select-item').iCheck('check');
+    return false;
+});
+$('.column-select-unall').on('click', function(){
+    $('.column-select-item').iCheck('uncheck');
     return false;
 });
 
