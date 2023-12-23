@@ -85,6 +85,7 @@ return [
     ],
     'all_methods_if_empty'  => '为空默认为所有方法',
     'all'                   => '全部',
+    'unall'                   => '取消全部',
     'current_page'          => '当前页',
     'selected_rows'         => '选择的行',
     'upload'                => '上传',
