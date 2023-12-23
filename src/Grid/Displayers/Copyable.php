@@ -16,6 +16,10 @@ class Copyable extends AbstractDisplayer
         $script = <<<SCRIPT
 $('#{$this->grid->tableID}').on('click','.grid-column-copyable',(function (e) {
     var content = $(this).data('content');
+
+    console.log("Copyable");
+    console.log(content);
+    console.log($(this));
     
     var temp = $('<input>');
     
@@ -36,6 +40,8 @@ SCRIPT;
         $this->addScript();
 
         $content = $this->getColumn()->getOriginal();
+
+        // when display value, the copyable is don't get value todo
 
         return <<<HTML
 <a href="javascript:void(0);" class="grid-column-copyable text-muted" data-content="{$content}" title="Copied!" data-placement="bottom">
