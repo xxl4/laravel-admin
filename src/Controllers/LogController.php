@@ -49,6 +49,7 @@ class LogController extends AdminController
         $grid->actions(function (Grid\Displayers\Actions $actions) {
             $actions->disableEdit();
             $actions->disableView();
+            $actions->disableDelete();
         });
 
         $grid->disableCreateButton();
